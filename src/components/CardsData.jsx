@@ -1,4 +1,3 @@
-// src/data/cardsData.js
 const CardsData = [
     {
       title: "Direct Scheduling",

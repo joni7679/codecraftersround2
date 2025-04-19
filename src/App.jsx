@@ -12,7 +12,6 @@ import Card from './components/Card'
 function App() {
 
   useEffect(() => {
-    // Initialize a new Lenis instance for smooth scrolling
     const lenis = new Lenis();
 
     // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
@@ -32,10 +31,13 @@ function App() {
 
   return (
     <>
-      <Hero />
-      <AboutUs />
-      <Stipes />
-      <Card />
+      <main>
+        <Hero />
+        <AboutUs />
+        <Stipes />
+        <Card />
+      </main>
+
     </>
   )
 }
