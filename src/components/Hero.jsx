@@ -71,7 +71,7 @@ function Hero() {
             scaleX: 0.9,
             scaleY: 0,
             duration: 2.5,
-            ease: "expo.out",
+            ease: "expo.inOut",
         }, "section+=0.5");
 
 
