@@ -16,60 +16,29 @@ function Card() {
     text.current = [];
     smtext.current = [];
 
-   
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: section.current,
-    //             start: 'top 80%',
-    //             end: 'bottom 40%',
-    //             pin: true,
-    //             scrub: 3,
-    //             markers: true, // Remove this in production
-    //         }
-    //     });
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section.current,
+                start: 'top 80%',
+                end: 'bottom 40%',
+                pin: true,
+                scrub: 3,
+                markers: true,
+            }
+        });
 
-    //     tl.from(heading.current, {
-    //         scale: 1.2,
-    //         opacity: 0,
-    //         duration: 1,
-    //         ease: "power4.out"
-    //     }, "cards")
+        
+    }, [])
 
-    //     tl.from(cards.current.filter(Boolean), {
-    //         height: 0,
-    //         opacity: 0,
-    //         duration: 0.5,
-    //         transformOrigin: "top",
-    //         stagger: 0.5,
-    //         ease: "circ.inOut",
-    //     }, "cards+=0.2");
 
-    //     tl.from(text.current.filter(Boolean), {
-    //         scale: 1.2,
-    //         opacity: 0,
-    //         stagger: 0.5,
-    //         duration: 0.5,
-    //         ease: "power4.out",
-    //     }, "cards+=0.4");
 
-    //     tl.from(smtext.current.filter(Boolean), {
-    //         scale: 1.2,
-    //         opacity: 0,
-    //         duration: 0.5,
-    //         ease: "power4.out",
-    //         stagger: 0.5,
-    //     }, "cards+=0.6");
 
-    //     return () => {
-    //         tl.scrollTrigger?.kill();
-    //         tl.kill();
-    //     };
-    // }, []);
 
     return (
         <section ref={section} className='create-section bg-black h-screen p-6 relative'>
-             <div className="bg-overly left-[-10%]  w-[300px] h-[300px] rounded-full absolute"></div>
-             <div className="bg-overly sec-overly w-[300px] h-[300px] rounded-full absolute"></div>
+            <div className="bg-overly left-[-10%]  w-[300px] h-[300px] rounded-full absolute"></div>
+            <div className="bg-overly sec-overly w-[300px] h-[300px] rounded-full absolute"></div>
             <div className='container mx-auto'>
                 <h1 ref={heading} className='text-white text-2xl uppercase text-center'>Create</h1>
 
