@@ -11,10 +11,10 @@ const AboutUs = () => {
         gsap.from(headingRef.current, {
             scrollTrigger: {
                 trigger: headingRef.current,
-                start: "top 80%",
+                start: "top 70%",
                 end: "top 30%",
                 scrub: 3,
-                markers: true,
+                // markers: true,
             },
             y: 50,
             scale: 1.5,

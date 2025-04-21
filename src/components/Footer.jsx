@@ -3,16 +3,10 @@ import { contactInfo } from "../constants/contactInfo";
 import { quickLinks } from "../constants/quickLinks";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
-
-
-
-
-
 const Footer = () => {
     return (
         <footer className="bg-[#0b0b0b] text-white px-6 py-10 md:py-12 relative">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
-
                 <div>
                     <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
                     <ul className="space-y-2 text-sm">
