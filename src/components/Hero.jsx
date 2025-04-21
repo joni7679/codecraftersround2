@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import { FaExternalLinkAlt, FaStar } from 'react-icons/fa';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { GoArrowUpRight } from 'react-icons/go';
 
 function Hero() {
     let heroHeading = useRef(null);
@@ -13,7 +14,6 @@ function Hero() {
     let heroImg = useRef(null)
     let startIcon = useRef(null)
     let box = useRef(null)
-
 
     useGSAP(() => {
         let tl = gsap.timeline();
@@ -61,20 +61,16 @@ function Hero() {
         }, "section+=0.4");
         tl.from(heroImg.current, {
             opacity: 0,
-            y: 20,
+            y: 100,
             duration: 2.5,
             ease: "expo.inOut",
-        }, "section+=0.8");
+        }, "section+=0.2");
 
-        tl.from(box.current, {
-            opacity: 0,
-            scaleX: 0.9,
-            scaleY: 0,
-            duration: 2.5,
+        tl.to(box.current, {
+            scaleY: 1,
+            duration: 1,
             ease: "expo.inOut",
         }, "section+=0.5");
-
-
 
     }, [])
 
@@ -84,7 +80,6 @@ function Hero() {
             <section className="font-[NeueMachina-Light] py-5 relative  bg-black text-white min-h-screen flex items-center justify-center px-6 ">
                 <div className="overly absolute bottom-0 w-full h-[80px] bg-black z-20"></div>
                 <div className="container mx-auto max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-
                     <div className="space-y-6">
                         <h1
                             ref={heroHeading}
@@ -97,33 +92,26 @@ function Hero() {
                             We don’t just build websites — we craft digital experiences that breathe life into your ideas.
                             From pixels to performance, we turn your vision into beautifully functional reality.
                         </p>
-
                         <div className="flex gap-2 items-center justify-start">
                             <div className="flex gap-2 items-center justify-center">
                                 <button ref={rightarrow} className="bg-white rounded-xl p-3 shadow-md">
-                                    <FaExternalLinkAlt className="text-gray-600" />
+                                    <GoArrowUpRight className="text-gray-600" />
                                 </button>
                                 <button ref={startIcon} className="bg-black border border-white rounded-xl p-3 shadow-md">
                                     <FaStar className="text-white" />
                                 </button>
                             </div>
                             <button ref={btn} className="bg-black text-white cursor-pointer px-[25px] py-[10px] rounded-2xl border-[1px] border-white">
-
                                 <span ref={btntext}>Appointment</span>
-
                             </button>
                         </div>
                     </div>
-
-
                     <div className="flex justify-center h-[500px]">
-                        <div ref={box} className="hero-right-part w-[350px] h-full relative bg-[#ffa1a1] rounded-tl-[50px] rounded-tr-[50px]">
-
-                            <img ref={heroImg} loading='lazy' className='w-[300px] absolute bottom-0 left-4' src="https://static.vecteezy.com/system/resources/thumbnails/053/238/006/small_2x/caucasian-businessman-crossed-arms-isolated-on-transparent-background-png.png" alt="" />
-
+                        <div className="hero-right-part w-[350px] h-full relative  rounded-tl-[50px] rounded-tr-[50px] overflow-hidden shadow-lg">
+                            <div ref={box} className="overly absolute w-full h-full bg-[#ffa1a1]  scale-y-0 origin-bottom transform">
+                                <img ref={heroImg} loading='lazy' className='w-[300px] absolute bottom-0 left-4' src="https://static.vecteezy.com/system/resources/thumbnails/053/238/006/small_2x/caucasian-businessman-crossed-arms-isolated-on-transparent-background-png.png" alt="" />
+                            </div>
                         </div>
-
-
                     </div>
                 </div>
             </section>

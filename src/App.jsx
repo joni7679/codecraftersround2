@@ -1,44 +1,51 @@
-import React, { useEffect } from 'react'
-// import Hero from './components/Hero'
-import AboutUs from './pages/AboutUs'
-import Hero from './components/Hero'
-import Stipes from './components/Stipes'
+import React, { useEffect, lazy, Suspense } from 'react'
 import Lenis from 'lenis'
-import { ScrollTrigger } from 'gsap/all'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+import CreativeSection from './components/CreativeSection'
+import Footer from './components/Footer'
+import Marquee from './components/Marquee'
+import TechMarquee from './components/TechMarquee'
 import Card from './components/Card'
 
+const Hero = React.lazy(() => import('./components/Hero'))
+const AboutUs = React.lazy(() => import('./pages/AboutUs'))
+const Stipes = React.lazy(() => import('./components/Stipes'))
+const TestimonialCard = React.lazy(() => import('./components/TestimonialCard'))
+import Loading from './components/Loader'
+// Register ScrollTrigger only once
+gsap.registerPlugin(ScrollTrigger)
 
 function App() {
 
-  // // useEffect(() => {
-  // //   const lenis = new Lenis();
-
-  // //   // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-  // //   lenis.on('scroll', ScrollTrigger.update);
-
-  // //   // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-  // //   // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-  // //   gsap.ticker.add((time) => {
-  // //     lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-  // //   });
-
-  // //   // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-  // //   gsap.ticker.lagSmoothing(0);
-
-  // }, [])//
-
+  // useEffect(() => {
+  //   const lenis = new Lenis()
+  //   function raf(time) {
+  //     lenis.raf(time)
+  //     requestAnimationFrame(raf)
+  //   }
+  //   requestAnimationFrame(raf)
+  //   return () => {
+  //     lenis.destroy()
+  //   }
+  // }, [])
 
   return (
-    <>
-      <main>
+    <main className="bg-white text-black">
+      <Suspense fallback={<div className="text-center p-4">
+        <Loading />
+      </div>}>
         <Hero />
         <AboutUs />
         <Stipes />
         <Card />
-      </main>
-
-    </>
+        <CreativeSection />
+        <TechMarquee />
+        <TestimonialCard />
+        <Marquee />
+        <Footer />
+      </Suspense>
+    </main>
   )
 }
 

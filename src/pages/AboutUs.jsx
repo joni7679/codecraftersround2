@@ -1,12 +1,38 @@
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
 import { FaStar } from "react-icons/fa";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutUs = () => {
+    const headingRef = useRef(null);
+    useGSAP(() => {
+        gsap.from(headingRef.current, {
+            scrollTrigger: {
+                trigger: headingRef.current,
+                start: "top 80%",
+                end: "top 30%",
+                scrub: 3,
+                markers: true,
+            },
+            y: 50,
+            scale: 1.5,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.out",
+        });
+    }, []);
+
+
+
     return (
-        <div className="min-h-screen font-[Helvetica-Oblique] bg-[#121212] text-white flex items-center justify-center px-4">
+        <div className="min-h-screen font-[Helvetica-Oblique] bg-[#121212] text-white flex items-center justify-center px-4 relative">
+            <div className="bg-overly left-[-10%]  w-[300px] h-[300px] rounded-full absolute"></div>
+            <div className="bg-overly sec-overly w-[300px] h-[300px] rounded-full absolute"></div>
             <div className="max-w-6xl w-full text-center space-y-12">
                 <div>
-                    <h2 className="text-2xl font-semibold tracking-widest">ABOUT US</h2>
+                    <h2 ref={headingRef} className="text-2xl font-semibold tracking-widest about-text"> About Our Mission</h2>
                     <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
                         We’re a team of passionate web creators who believe in turning ideas into interactive realities.
                         From elegant UI designs to powerful backend solutions, we craft websites that don’t just look good — they work beautifully.
@@ -28,7 +54,7 @@ const AboutUs = () => {
                                     <img className="w-full h-full object-cover" src="https://cdn.pixabay.com/photo/2021/10/13/11/29/girl-6706267_1280.jpg" alt="" />
                                 </div>
                             </div>
-                            <span className="text-black ml-2">    <FaStar  className="inline-block"/> 5 stars</span>
+                            <span className="text-black ml-2">    <FaStar className="inline-block" /> 5 stars</span>
                         </div>
                         <button className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center">→</button>
                     </div>
