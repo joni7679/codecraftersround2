@@ -37,7 +37,7 @@ function TechMarquee() {
                     start: "top 50%",
                     end: "bottom top",
                     scrub: 3,
-                    markers: true,
+                    // markers: true,
                 },
             })
 

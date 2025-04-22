@@ -9,7 +9,7 @@ import Marquee from './components/Marquee';
 import TechMarquee from './components/TechMarquee';
 import Card from './components/Card';
 import Loading from './components/Loader';
-
+import { motion, useScroll } from 'motion/react';
 // Lazy-loaded components
 const Hero = lazy(() => import('./components/Hero'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
@@ -20,6 +20,11 @@ const TestimonialCard = lazy(() => import('./components/TestimonialCard'));
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+
+  const scrollYProgress = useScroll().scrollYProgress;
+
+  console.log(scrollYProgress);
+
   useEffect(() => {
     // Initialize a new Lenis instance for smooth scrolling
     const lenis = new Lenis();
@@ -39,19 +44,27 @@ function App() {
 
 
   return (
-    <main className="bg-white text-black">
-      <Suspense fallback={<div className="text-center p-4"><Loading /></div>}>
-        <Hero />
-        <AboutUs />
-        <Stipes />
-        <Card />
-        <CreativeSection />
-        <TechMarquee />
-        <TestimonialCard />
-        <Marquee />
-        <Footer />
-      </Suspense>
-    </main>
+
+    <>
+      {/* <motion.div style={{
+        scaleX: scrollYProgress,
+      transition: 'transform 0.3s ease-out',}} className='bg-[#f15656] w-full rounded-2xl h-4 origin-left fixed z-50'></motion.div> */}
+      <main >
+        <Suspense fallback={<div><Loading /></div>}>
+          <Hero />
+          <AboutUs />
+          <Stipes />
+          <Card />
+          <CreativeSection />
+          <TechMarquee />
+          <TestimonialCard />
+          <Marquee />
+          <Footer />
+        </Suspense>
+      </main>
+
+    </>
+
   );
 }
 

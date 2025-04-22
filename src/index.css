@@ -79,3 +79,14 @@ main {
     transform: translateX(-100%);
   }
 }
+
+.contact-us-text {
+  -webkit-text-stroke: 1px #22c55e;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: none;
+  }
+}

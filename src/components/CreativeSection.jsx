@@ -42,8 +42,7 @@ const CreativeSection = () => {
                     {features.slice(2, 4).map((feature, index) => (
                         <div
                             key={index}
-                            className="border border-white/20 rounded-xl p-5 cursor-pointer"
-                        >
+                            className="border border-white/20 rounded-xl p-5 cursor-pointer">
                             <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                             <p className="text-sm text-gray-300 mb-4">{feature.description}</p>
                             <div className="mr-9">

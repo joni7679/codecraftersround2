@@ -9,8 +9,6 @@ const Navbar = () => {
                 <span className="text-white">Code</span>
                 <span className="text-white">Crafters</span>
             </div>
-
-         
             <ul className="flex space-x-6 text-sm font-semibold">
                 <li><a href="#" className="hover:text-gray-400">HOME</a></li>
                 <li><a href="#" className="hover:text-gray-400">ABOUT US</a></li>
@@ -19,14 +17,11 @@ const Navbar = () => {
                 <li><a href="#" className="hover:text-gray-400">SERVICES</a></li>
                 <li><a href="#" className="hover:text-gray-400">CONTACT</a></li>
             </ul>
-
-            
             <div>
                 <img
                     src="https://cdn-icons-png.flaticon.com/512/54/54481.png"
                     alt="icon"
-                    className="w-4 h-4 filter invert"
-                />
+                    className="w-4 h-4 filter invert"/>
             </div>
         </nav>
     );

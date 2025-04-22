@@ -66,9 +66,9 @@ function TestimonialCard() {
                                         <p className="text-sm text-gray-500">{testimonial.company}</p>
                                     </div>
                                 </div>
-                                <FaQuoteLeft className="inline-block text-green-300 " />
+                                <FaQuoteLeft className="inline-block text-green-300  absolute left-[-5%]" />
                                 <p className="text-gray-700 text-lg italic">{testimonial.feedback}</p>
-                                <FaQuoteRight className="inline-block text-green-300 " />
+                                <FaQuoteRight className="inline-block text-green-300 absolute right-[56%] top-[67%] " />
 
                                 <p className="text-sm text-gray-400 mt-2">{testimonial.date}</p>
                             </div>

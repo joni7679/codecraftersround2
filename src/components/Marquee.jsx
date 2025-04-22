@@ -19,12 +19,9 @@ function Marquee() {
                                 </div>
                             )
                         })}
-
-
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

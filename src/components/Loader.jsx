@@ -13,7 +13,7 @@ const Loader = () => {
                     return 100;
                 }
             });
-        }, 10);
+        }, 30);
 
         return () => clearInterval(interval);
     }, []);
