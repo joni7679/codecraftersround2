@@ -10,9 +10,15 @@ const Footer = () => {
         <footer className="bg-[#0b0b0b] text-white px-6 py-10 md:py-12 relative">
             <ContactCTA />
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
-                <div>
+                <div className="w-[300px] bg-[#111111] p-4">
+                    <h2 className="text-lg font-semibold mb-4">Logo</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+                <div className="bg-[#111111] p-4 space-y-2 ">
                     <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
-                    <ul className="space-y-2 text-sm">
+                    <ul className="text-sm">
                         {quickLinks.map((item, index) => (
                             <li key={index} className="cursor-pointer hover:text-green-500 transition duration-300">
                                 {item}
@@ -20,11 +26,11 @@ const Footer = () => {
                         ))}
                     </ul>
                 </div>
-                
+
 
                 <div className="space-y-4">
                     <div className="flex gap-4 flex-wrap">
-                        <AgencyCard name="CodeCrafters"
+                        <AgencyCard name="Contact Us"
                             addressLine1=" West Bengal,"
                             addressLine2=", 85130xx Indian"
                             email="info@Exampel.Com" />

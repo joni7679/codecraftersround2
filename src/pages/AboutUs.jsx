@@ -7,14 +7,16 @@ import { aboutData } from "../constants/AboutData";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutUs = () => {
+    const aboutsection = useRef(null);
     const headingRef = useRef(null);
     const subheadingRef = useRef(null);
     const cards = useRef([]);
-    const userImg = useRef([]);
+    const img = useRef([]);
+    const description = useRef([]);
     useEffect(() => {
         let tl = gsap.timeline({
             scrollTrigger: {
-                trigger: headingRef.current,
+                trigger: aboutsection.current,
                 start: "top 70%",
                 end: "top 30%",
                 scrub: 3,
@@ -64,30 +66,46 @@ const AboutUs = () => {
                 opacity: 1,
             }, '+=0.5'
         );
-        tl.fromTo(userImg.current, {
-            scale: 0.5,
-            opacity: 0,
-            duration: 1.5,
-            ease: "power2.out",
-        }, {
-            scale: 1,
-            opacity: 1,
-            stagger: 0.2,
-        }, '+=0.5'
-        )
 
 
+        description.current.forEach((desc, i) => {
+            console.log(desc);
+            tl.fromTo(desc, {
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power2.out",
+            },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power2.out",
+                }, '+=0.7')
+        })
 
-
-
-
+        img.current.forEach((image, i) => {
+            console.log(image);
+            if (!image) return;
+            tl.fromTo(image, {
+                y: -50,
+                scale: 1.5,
+                opacity: 0,
+            }, {
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power2.out",
+            }, "+=0.1" * i);
+        });
     }, []);
 
 
 
 
     return (
-        <div className="min-h-screen font-[Helvetica-Oblique] bg-[#121212] text-white flex items-center justify-center px-4 relative">
+        <div ref={aboutsection} className="min-h-screen font-[Helvetica-Oblique] bg-[#121212] text-white flex items-center justify-center px-4 relative">
             <div className="bg-overly left-[-10%]  w-[300px] h-[300px] rounded-full absolute"></div>
             <div className="bg-overly sec-overly w-[300px] h-[300px] rounded-full absolute"></div>
             <div className="max-w-6xl w-full text-center space-y-12">
@@ -119,10 +137,10 @@ const AboutUs = () => {
                                     <div className="flex items-center mt-4 gap-5">
                                         <div className="flex items-center justify-center">
                                             {card.users.map((userImg, i) => (
-                                                <div ref={userImg}
+                                                <div
                                                     key={i}
-                                                    className="w-9 h-9 mr-[-15px] rounded-full bg-gray-300 overflow-hidden">
-                                                    <img
+                                                    className="w-9 h-9 mr-[-15px] rounded-full overflow-hidden">
+                                                    <img ref={(el) => (img.current[index] = el)}
                                                         className="w-full h-full object-cover"
                                                         src={userImg}
                                                         alt={`user-${i}`}
@@ -143,7 +161,7 @@ const AboutUs = () => {
                             {card.icon && (
                                 <>
                                     <h3 className="text-lg font-bold mt-10 font-[NeueMachina-Light]">{card.title}</h3>
-                                    <p className="text-sm text-gray-700 mt-4">{card.description}</p>
+                                    <p ref={(el) => (description.current[index] = el)} className="text-sm text-gray-700 mt-4">{card.description}</p>
                                 </>
                             )}
                         </div>

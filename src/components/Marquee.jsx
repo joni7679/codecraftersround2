@@ -7,7 +7,7 @@ function Marquee() {
 
     return (
         <>
-            <div className='w-full bg-[#49f64c] overflow-hidden font-[helvetica-rounded-bold]'>
+          <div className='w-full bg-[#49f64c] overflow-hidden font-[helvetica-rounded-bold]'>
                 <div className="marquee  text-4xl  text-white h-28 p-5 flex items-center justify-center">
                     <div className="marquee__inner flex items-center justify-center whitespace-nowrap animate-marquee gap-4">
                         {marqueeTexts.map((text, index) => {

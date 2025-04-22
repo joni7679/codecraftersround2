@@ -18,7 +18,6 @@ function Hero() {
     useGSAP(() => {
         let tl = gsap.timeline();
         console.log(heroHeading.current);
-
         tl.from(heroHeading.current, {
             scale: 1.1,
             y: 80,
@@ -120,6 +119,7 @@ function Hero() {
 }
 
 export default Hero;
+
 // import React, { useRef, useEffect } from 'react';
 // import Navbar from './Navbar';
 // import { FaStar } from 'react-icons/fa';

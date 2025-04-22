@@ -47,22 +47,17 @@ function Card() {
 
     return (
         <section ref={sectionRef} className="create-section bg-black p-6 relative">
-
             <div className="bg-overly absolute left-[-10%] w-[300px] h-[300px] rounded-full"></div>
             <div className="bg-overly sec-overly absolute right-[-10%] w-[300px] h-[300px] rounded-full"></div>
-
             <div className="container mx-auto">
                 <h1 className="text-white text-2xl uppercase text-center">Create</h1>
-
                 <div className="sub-heading w-[24rem] mt-4 mb-6 text-left">
                     <p
                         ref={headingTextRef}
-                        className="animated-text text-white font-[NeueMachina-Light] font-extrabold text-4xl z-10"
-                    >
+                        className="animated-text text-white font-[NeueMachina-Light] font-extrabold text-4xl">
                         Take your brand’s online presence to the next level
                     </p>
                 </div>
-
                 <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-6 p-6">
                     {CardsData.map((val, i) => (
                         <div

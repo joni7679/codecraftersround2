@@ -4,7 +4,6 @@ import React from "react";
 const Navbar = () => {
     return (
         <nav className="flex font-[Helvetica-Bold] items-center justify-between px-6 py-4 bg-black text-white shadow-md ">
-            
             <div className="text-lg font-bold">
                 <span className="text-white">Code</span>
                 <span className="text-white">Crafters</span>
