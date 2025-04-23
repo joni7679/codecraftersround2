@@ -3,6 +3,7 @@ import { techs } from '../constants/techs'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { section } from 'motion/react-client';
+import ScrollingSkillCard from './ScrollingSkillCard';
 gsap.registerPlugin(ScrollTrigger);
 function TechMarquee() {
     const paraRefs = useRef();
@@ -32,7 +33,7 @@ function TechMarquee() {
             stagger: 0.2,
             color: "#fff",
         });
-       
+
 
     }, []);
     return (
@@ -50,9 +51,7 @@ function TechMarquee() {
                     </p>
                 </div>
                 <div className="overflow-hidden whitespace-nowrap">
-                    {techs.map((tech, index) => {
-
-                    })}
+                    <ScrollingSkillCard />
                 </div>
             </section>
         </>

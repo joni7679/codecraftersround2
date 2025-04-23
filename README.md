@@ -19,7 +19,7 @@ A visually stunning **React-based website** built for the **Codecrafters Hackath
 - 🎨 **Custom Animations** – Hero text reveals, section fade-ins, scroll-based effects  
 ---
 ## 🔗 Live Preview  
-👉 [Live Demo](https://joni7679.github.io/codecraftersround2)
+👉 [Live Demo](https://codecraftersround-2.netlify.app/)
 
 ---
 ## 📸 Screenshots

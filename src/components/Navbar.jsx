@@ -10,11 +10,11 @@ const Navbar = () => {
                 <span className="text-white">Crafters</span>
             </div>
             <ul className="flex space-x-6 text-sm font-semibold">
-                <li><Link to={`/`} href="#" className="hover:text-gray-400">HOME</Link></li>
-                <li><a href="#" className="hover:text-gray-400">ABOUT US</a></li>
+                <li><Link to={`/`} className="hover:text-gray-400">HOME</Link></li>
+                <li><Link to={`/about`} className="hover:text-gray-400">ABOUT US</Link></li>
                 <li><a href="#" className="hover:text-gray-400">CREATE</a></li>
                 <li><a href="#" className="hover:text-gray-400">PLANS</a></li>
-                <li><Link to={`/serives`} href="#" className="hover:text-gray-400">SERVICES</Link></li>
+                <li><Link to={`/services`} className="hover:text-gray-400">SERVICES</Link></li>
                 <li><a href="#" className="hover:text-gray-400">CONTACT</a></li>
             </ul>
             <div>

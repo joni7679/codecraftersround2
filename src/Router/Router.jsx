@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import AboutUs from "../pages/AboutUs";
 import Services from "../components/Services";
 import Serivespage from "../pages/Serivespage";
+import NotFound from "../pages/NotFound";
+import AboutPage from "../pages/AboutPage";
 
 export const router = createBrowserRouter([
     {
@@ -12,14 +14,14 @@ export const router = createBrowserRouter([
     },
     {
         path: "/about",
-        element: <AboutUs />,
+        element: <AboutPage/>,
     },
     {
-        path: "/serives",
-        element: <Serivespage/>,
+        path: "/services",
+        element: <Serivespage />,
     },
     {
         path: "*",
-        element: <h1>404</h1>,
+        element: <NotFound />,
     }
 ]);

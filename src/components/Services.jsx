@@ -10,7 +10,7 @@ function Services() {
           {services.map((service, i) => (
             <div key={i} className=" p-6 rounded-xl shadow-lg border">
               <h4 className="text-xl font-semibold mb-2">{service.title}</h4>
-              <p className="text-gray-400">{service.details}</p>
+              <p className="text-gray-100">{service.details}</p>
             </div>
           ))}
         </div>
