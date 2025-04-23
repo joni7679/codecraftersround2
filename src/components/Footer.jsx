@@ -13,7 +13,7 @@ const Footer = () => {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
                     <div className="w-[300px] bg-[#111111] p-6 rounded-xl">
                         <h2 className="text-lg font-semibold mb-4 text-green-500">CodeCrafters</h2>
-                        <p class="text-left text-lg text-white ">
+                        <p className="text-left text-lg text-white ">
                             Bringing your ideas to life with creativity and precision. Let's collaborate.
                         </p>
                     </div>

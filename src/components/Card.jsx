@@ -47,9 +47,10 @@ function Card() {
 
     return (
         <section ref={sectionRef} className="create-section bg-black p-6 relative">
+
             <div className="bg-overly absolute left-[-10%] w-[300px] h-[300px] rounded-full"></div>
             <div className="bg-overly sec-overly absolute right-[-10%] w-[300px] h-[300px] rounded-full"></div>
-            <div className="container mx-auto">
+            <div className="container mx-auto px-6">
                 <h1 className="text-white text-2xl uppercase text-center">Create</h1>
                 <div className="sub-heading w-[24rem] mt-4 mb-6 text-left">
                     <p

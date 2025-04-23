@@ -15,14 +15,14 @@ const About = () => {
     const img = useRef([]);
     const description = useRef([]);
     useEffect(() => {
-        let ctx = gsap.context(() => {
-            let tl = gsap.timeline({
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: aboutsection.current,
-                    start: "top 70%",
+                    start: "top 90%",
                     end: "bottom 20%",
                     scrub: 2,
-                    // markers: true, // 
+                    markers: true,
                 },
                 defaults: {
                     ease: "power2.out",
@@ -42,38 +42,38 @@ const About = () => {
                 y: -60,
                 opacity: 0,
                 scale: 1.2,
-            }, "-=0.8"); // Overlap previous
+            }, "+=0.8");
 
             // Animate Cards
             tl.from(cards.current, {
                 scaleY: 0.6,
                 opacity: 0,
                 stagger: 0.2,
-            }, "-=0.6");
+            }, "+=0.6");
 
             // Animate Descriptions
-
             tl.from(description.current, {
                 y: 40,
                 opacity: 0,
                 duration: 0.8,
                 stagger: 0.15,
                 ease: "power3.out",
-            }, "-=0.5");
+            }, "+=0.5");
 
             // Animate Images
-
             tl.from(img.current, {
                 opacity: 0,
                 scale: 0.8,
                 stagger: 0.1,
                 duration: 0.8,
                 ease: "power3.out",
-            }, "-=0.6");
+            }, "+=0.6");
+
         }, aboutsection);
 
-        return () => ctx.revert(); 
+        return () => ctx.revert(); // Cleanup
     }, []);
+
 
 
 

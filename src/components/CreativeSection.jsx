@@ -6,7 +6,7 @@ import img from '../../public/gril.webp'
 
 const CreativeSection = () => {
     return (
-        <section className="bg-black text-white py-16 px-4 md:px-20 relative">
+        <section className="bg-black text-white px-6   relative">
             <div className="bg-overly left-[-10%]  w-[300px] h-[300px] rounded-full absolute"></div>
             <div className="bg-overly sec-overly w-[300px] h-[300px] rounded-full absolute"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">

@@ -69,9 +69,9 @@ main {
 
 .trail-segment {
   position: fixed;
-  width: 25px;
-  height: 25px;
-  background: radial-gradient(circle, rgba(186, 178, 178, 0.5) 0%, rgba(255, 255, 255, 0) 80%);
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(230, 226, 226, 0.5) 0%, rgba(255, 255, 255, 0) 80%);
   pointer-events: none;
   border-radius: 50%;
   transform: translate(-50%, -50%);

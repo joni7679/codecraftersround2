@@ -1,24 +1,62 @@
+#  Codecrafters Round 2 – Web Agency Website
 
-# codecraftersround2 Web Agency Website
+##  Description
+A visually stunning **React-based website** built for the **Codecrafters Hackathon - Round 2**. The site showcases smooth scrolling and captivating scroll-triggered animations using **GSAP**, **ScrollTrigger**, and **Lenis**, delivering a modern and interactive browsing experience.
+  
+  ---
+  
+##  Technologies Used
+- **React.js** – Library for building dynamic user interfaces  
+- **GSAP** – High-performance animations  
+- **ScrollTrigger** – GSAP plugin to trigger animations based on scroll position  
+- **Lenis** – For buttery-smooth scrolling  
+- **Framer Motion** *(optional)* – For advanced transitions  
+---
+##  Features
+- 🔄 **Smooth Scrolling** using **Lenis**  
+- 🎯 **Scroll-Based Animations** powered by **GSAP + ScrollTrigger**  
+- 📱 **Responsive Design** – Looks great on all devices  
+- 🎨 **Custom Animations** – Hero text reveals, section fade-ins, scroll-based effects  
+---
+## 🔗 Live Preview  
+👉 [Live Demo](https://joni7679.github.io/codecraftersround2)
 
-## Description
-This is a React-based website created for the second round of the hackathon. The site features smooth scrolling and scroll-triggered animations using **GSAP**, **ScrollTrigger**, and **Lenis**. It enhances user experience with engaging and interactive animations as users scroll through the website.
+---
+## 📸 Screenshots
 
-## Technologies Used
-- **React.js** – JavaScript library for building user interfaces
-- **GSAP** – GreenSock Animation Platform for high-performance animations
-- **ScrollTrigger** – GSAP plugin to trigger animations based on scroll position
-- **Lenis** – Smooth scroll library for a buttery-smooth scrolling experience
-- **Framer Motion** (optional) – For advanced animation effects and transitions
+### ✅ Hero Section  
+![Hero Section](./screenshots/hero.png)
 
-## Features
-- **Smooth Scrolling**: Smooth, elegant scrolling powered by **Lenis** for an immersive experience.
-- **Scroll-Based Animations**: Various elements animate based on the user's scroll position using **GSAP** and **ScrollTrigger**.
-- **Responsive Design**: Fully responsive layout for seamless experience on all screen sizes.
-- **Custom Animations**: Hero text reveals, section transitions, and scrolling effects triggered by user scroll.
+### ✅ About Section  
+![About Section](./screenshots/about.png)
 
-## Installation
+### ✅ Services Section  
+![Services Section](./screenshots/services.png)
+ 
+ ---
+ 
+## 🧩 Pages Overview
 
-### 1. Clone the repository:
+###  Home
+- Beautiful animated hero section  
+- Lenis-powered smooth scroll  
+- GSAP animations on section entry  
+
+###  About
+- About the agency, its vision, and mission  
+- Scroll-triggered animations and transitions  
+
+###  Services
+- Interactive list of services with animation  
+- Well-structured layout with scroll reveals  
+
+---
+
+##  Installation Guide
+
+### Step 1: Clone the repository
 ```bash
-git clone git@github.com:joni7679/codecraftersround2.git
+git clone https://github.com/joni7679/codecraftersround2.git
+cd codecraftersround2
+npm i
+npm run dev

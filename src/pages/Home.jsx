@@ -8,6 +8,7 @@ import TestimonialCard from '../components/TestimonialCard';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
 import CustomCursor from '../components/CustomCursor';
+import TechMarquee from '../components/TechMarquee';
 
 
 export default function Home() {
@@ -15,12 +16,13 @@ export default function Home() {
         <>
             <main>
                 <Suspense fallback={<Loading />}>
-                <CustomCursor />
+                    <CustomCursor />
                     <Hero />
                     <AboutUs />
                     <Stipes />
                     <Card />
                     <CreativeSection />
+                    <TechMarquee />
                     <TestimonialCard />
                     <Footer />
                 </Suspense>
