@@ -1,63 +1,39 @@
 import React, { useEffect, useRef } from 'react'
 import { techs } from '../constants/techs'
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { section } from 'motion/react-client';
-
+gsap.registerPlugin(ScrollTrigger);
 function TechMarquee() {
-    const paraRefs = useRef([]);
+    const paraRefs = useRef();
     const section = useRef(null);
     const heading = useRef(null);
-    const textLines = [
-        "From powerful frontend frameworks like React and Next.js to",
-        " robust backend tech like Node.js and MongoDB — we also integrate modern AI tools to deliver ",
-        "smart, scalable, and future-ready digital solutions.",
-
-    ];
 
     useEffect(() => {
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section.current,
+                start: "top 90%",
+                end: "bottom 20%",
+                scrub: 0.5,
+                markers: true,
+            },
+        })
 
-        paraRefs.current.forEach((para) => {
-            if (!para) return;
-            const words = para.textContent.split(" ");
-            para.innerHTML = "";
+        const text = paraRefs.current.innerText;
+        console.log("paraRefs.current.innerText", text);
+        const newText = text.split("").map((char, index) =>
+            `<span key=${index} class="inline-block opacity-30 text-gray-500">${char}</span>`
+        ).join("");
 
-            const wordSpans = words.map((word) => {
-                const wordWrapper = document.createElement("span");
-                wordWrapper.className = "inline-block overflow-hidden mr-1";
-                const innerSpan = document.createElement("span");
-                innerSpan.textContent = word;
-                innerSpan.className = "inline-block opacity-0 translate-y-3";
-                wordWrapper.appendChild(innerSpan);
-                para.appendChild(wordWrapper);
-                return innerSpan;
-            });
-            let tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: section.current,
-                    start: "top 50%",
-                    end: "bottom top",
-                    scrub: 3,
-                    // markers: true,
-                },
-            })
-
-            tl.to(wordSpans, {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.05,
-                ease: "power2.out",
-            }, 'section');
-            tl.to(heading.current, {
-                opacity: 0,
-                y: 30,
-                duration: 0.6,
-                filter: "blur(10px)",
-                ease: "power2.out",
-            }, 'section')
-
-
+        paraRefs.current.innerHTML = newText;
+        tl.to(paraRefs.current.children, {
+            opacity: 1,
+            stagger: 0.2,
+            color: "#fff",
         });
+       
+
     }, []);
     return (
         <>
@@ -66,25 +42,19 @@ function TechMarquee() {
                     Technologies We Master
                 </h2>
                 <div className="text-center text-gray-400 text-lg mt-5  max-w-xl mx-auto font-[helvetica-rounded-bold]">
-                    {textLines.map((line, index) => (
-                        <p
-                            key={index}
-                            ref={(el) => (paraRefs.current[index] = el)}
-                            className="text-gray-100 text-lg  font-[helvetica-rounded-bold]"
-                        >
-                            {line}
-                        </p>
-                    ))}
-                </div>
 
+                    <p ref={paraRefs} className="text-gray-100 text-lg  font-[helvetica-rounded-bold]">
+                        From powerful frontend frameworks like React and Next.js to,
+                        robust backend tech like Node.js and MongoDB — we also integrate modern AI tools to deliver,
+                        smart, scalable, and future-ready digital solutions.,
+                    </p>
+                </div>
                 <div className="overflow-hidden whitespace-nowrap">
                     {techs.map((tech, index) => {
 
                     })}
                 </div>
             </section>
-
-
         </>
     )
 }

@@ -34,16 +34,13 @@ function TestimonialCard() {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full h-screen bg-[#121212] overflow-hidden"
-        >
+            className="relative w-full h-screen bg-[#121212] overflow-hidden">
             <h3 className="font-[Helvetica-Oblique] text-white text-4xl text-center uppercase pt-10 mb-10">
                 Testimonials
             </h3>
-
             <div
                 ref={containerRef}
-                className="flex w-max h-full gap-10 px-10"
-            >
+                className="flex w-max h-full gap-10 px-10">
                 {testimonials.map((testimonial, index) => (
                     <div
                         key={index}
@@ -63,7 +60,7 @@ function TestimonialCard() {
                             </div>
                             <FaQuoteLeft className="inline-block text-green-300 absolute left-[-5%]" />
                             <p className="text-gray-700 text-lg italic">{testimonial.feedback}</p>
-                            <FaQuoteRight className="inline-block text-green-300 absolute right-[56%] top-[67%]" />
+                            
                             <p className="text-sm text-gray-400 mt-2">{testimonial.date}</p>
                         </div>
                     </div>

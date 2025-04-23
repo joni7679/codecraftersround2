@@ -12,7 +12,7 @@ const CreativeSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                 What Can a Creative Website <br /> Do for Your Brand?
             </h2>
-            <div className="grid md:grid-cols-3 gap-6 items-center">
+            <div className="grid md:grid-cols-3 gap-6 items-center container mx-auto">
                 <div className="flex flex-col gap-6">
                     {features.slice(0, 2).map((feature, index) => (
                         <div
