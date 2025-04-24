@@ -5,13 +5,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { testimonials } from "../constants/TestimonialData";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { useRef } from "react";
-
 gsap.registerPlugin(ScrollTrigger);
 
 function TestimonialCard() {
     const sectionRef = useRef(null);
     const containerRef = useRef(null);
-
     useGSAP(() => {
         const container = containerRef.current;
         const sections = gsap.utils.toArray(".testimonial-card");
@@ -44,8 +42,7 @@ function TestimonialCard() {
                 {testimonials.map((testimonial, index) => (
                     <div
                         key={index}
-                        className="testimonial-card flex-none w-[25rem] h-[20rem] bg-white p-5 rounded-3xl shadow-xl"
-                    >
+                        className="testimonial-card flex-none w-[25rem] h-[20rem] bg-white p-5 rounded-3xl shadow-xl">
                         <div className="relative z-10 space-y-2">
                             <div className="flex items-center gap-3">
                                 <img

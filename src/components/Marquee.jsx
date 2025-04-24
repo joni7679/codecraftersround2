@@ -3,8 +3,6 @@ import { FaAsterisk, FaStar } from 'react-icons/fa'
 import { marqueeTexts } from '../constants/marqueeTexts'
 
 function Marquee() {
-
-
     return (
         <>
           <div className='w-full bg-green-500 overflow-hidden font-[helvetica-rounded-bold]'>

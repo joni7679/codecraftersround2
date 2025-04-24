@@ -4,10 +4,13 @@ import './index.css'
 
 import { RouterProvider } from 'react-router-dom'
 import { router } from './Router/Router.jsx'
+import LenisWrapper from './components/LenisWrapper.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <LenisWrapper>
     <RouterProvider router={router} />
+    </LenisWrapper>
   </StrictMode>,
 )

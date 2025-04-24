@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const ServicesHero = () => {
     let textref = useRef(null);
     let section = useRef(null);
-
     // useEffect(() => {
     //     const tl = gsap.timeline({
     //         scrollTrigger: {
