@@ -167,7 +167,7 @@ main {
 
 .marquee-row.reverse {
   animation: scroll-right 40s linear infinite;
-  transform: translateX(50%);
+
 }
 
 @keyframes scroll-left {

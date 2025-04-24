@@ -38,9 +38,25 @@ function Card() {
             duration: 1.5,
             stagger: 0.2,
             ease: "power3.out",
-        }, 'start');
+        }, 'start+=0.5');
 
-    
+        console.log(headingTextRef.current);
+
+        const text = headingTextRef.current.innerText;
+        console.log(text);
+
+        console.log("headingTextRef.current.innerText", text);
+        const newText = text.split("").map((char, index) =>
+            `<span key=${index} class="inline-block opacity-30 text-gray-500">${char}</span>`
+        ).join("");
+
+        headingTextRef.current.innerHTML = newText;
+        tl.to(headingTextRef.current.children, {
+            opacity: 1,
+            stagger: 0.2,
+            color: "#fff",
+        },"start+=0.6");
+
 
 
     }, []);

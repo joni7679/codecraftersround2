@@ -46,7 +46,7 @@ const About = () => {
 
             // Animate Cards
             tl.from(cards.current, {
-                scaleY: 0.6,
+                y: 40,
                 opacity: 0,
                 stagger: 0.2,
             }, "+=0.6");
@@ -98,6 +98,12 @@ const About = () => {
                                 }`}
                             style={{ backgroundColor: card.bgColor }}
                         >
+                            <div className="transform origin-bottom w-full h-full">
+
+
+
+
+                            </div>
                             {card.icon && (
                                 <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#ff5656] rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     <FaStar />

@@ -1,14 +1,28 @@
-export const services = [
+ 
+export const ServicesData = [
     {
-        title: "Website Design",
-        details: "Responsive, Modern, & User-Centric Designs. UX/UI Strategy for Optimized User Experience",
+      title: "Design Services",
+      points: [
+        "Responsive, Modern, & User-Centric Designs",
+        "Custom Design & Template-based Options",
+        "UI/UX Strategy for Optimized User Experience"
+      ]
     },
     {
-        title: "Website Development",
-        details: "Frontend (HTML, CSS, JS, React). Fullstack Development for Dynamic Sites",
+      title: "Web Development",
+      points: [
+        "Frontend Development (HTML, CSS, JavaScript, React)",
+        "Backend Development (Node.js, Express, MongoDB)",
+        "Full-stack Development for Dynamic Websites"
+      ]
     },
     {
-        title: "SEO & Digital Marketing",
-        details: "On-Page SEO, Analytics Setup, Social Media Campaigns",
-    },
-];
+      title: "Digital Marketing",
+      points: [
+        "On-Page & Off-Page SEO Optimization",
+        "Google Analytics & Keyword Strategy",
+        "Social Media Marketing Campaigns"
+      ]
+    }
+  ];
+  
