@@ -9,14 +9,14 @@ export const aboutData = [
             "https://cdn.pixabay.com/photo/2021/10/13/11/29/girl-6706267_1280.jpg"
         ],
         rating: "5 stars",
-        bgColor: "#FFA1A1"
+        bgColor: "#8F86F0"
     },
     {
         id: 2,
         title: "Digital Journeys We’ve Built",
         description: "Since 2013, we’ve guided millions of global users on their digital assets journey!",
         icon: true,
-        bgColor: "#FFA1A1"
+        bgColor: "#8F86F0",
     }
     
 ]

@@ -7,6 +7,7 @@ export const plans = [
     {
         name: "Standard Package",
         price: "₹1,999",
+       
         features: ["Up to 7 Pages", "SEO Optimization", "CMS", "5 Days Delivery"],
     },
     {

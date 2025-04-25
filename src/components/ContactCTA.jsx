@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 
 const ContactCTA = () => {
@@ -12,9 +13,11 @@ const ContactCTA = () => {
                 <BsArrowUpRightCircle size={32} />
             </div>
             <button className="bg-green-400 text-black font-semibold px-5 py-2 rounded-full hover:bg-green-300 transition duration-300">
-                Get in Touch
+                <Link to="/Contact" className="block w-full h-full">
+                    Get in Touch
+                </Link>
             </button>
-        </section>
+        </section >
     );
 };
 

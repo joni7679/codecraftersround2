@@ -20,7 +20,7 @@ export const FAQ = () => {
                 start: "top 90%",
                 end: "bottom 20%",
                 scrub: 2,
-                markers: true,
+                // markers: true,
             },
             defaults: {
                 ease: "power2.out",

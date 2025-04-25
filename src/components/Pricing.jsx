@@ -3,6 +3,7 @@ import { plans } from '../constants/PricingData';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import OverlappingButtons from './OverlappingButtons';
+import basicpack from "../assets/images/basic.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +73,7 @@ function Pricing() {
                             ref={(el) => overly.current[i] = el}
                             className="overly absolute top-0 left-0 w-full h-full opacity-0 scale-y-0 origin-bottom bg-[#FFA1A1] p-6 rounded-[20px]"
                         >
-                            <div className="w-[80px] h-[80px] bg-white rounded-full text-center m-auto mb-5"></div>
+                           
                             <h4 ref={(el) => title.current[i] = el} className="text-xl font-bold mb-2">{plan.name}</h4>
                             <ul ref={(el) => features.current[i] = el} className="text-left mb-4">
                                 {plan.features.map((f, j) => (
@@ -81,7 +82,7 @@ function Pricing() {
                             </ul>
                             <p ref={(el) => price.current[i] = el} className="text-2xl font-bold mb-4">{plan.price}</p>
                             <div className="flex items-center justify-center gap-4">
-                            <OverlappingButtons  title="Bulid Now" />
+                                <OverlappingButtons title="Bulid Now" />
                             </div>
                         </div>
                     </div>

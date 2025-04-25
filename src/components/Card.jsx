@@ -83,17 +83,17 @@ function Card() {
                         >
                             <div
                                 ref={(el) => (cardsRef.current[i] = el)}
-                                className="card-overlay absolute top-0 left-0 w-full h-full opacity-0 transform scale-y-0 origin-bottom bg-[#FFA1A1] p-6 rounded-[20px]"
+                                className="card-overlay absolute top-0 left-0 w-full h-full opacity-0 transform scale-y-0 origin-bottom bg-[var(--quinary-color)] p-6 rounded-[20px]"
                             >
                                 <h2
                                     ref={(el) => (titlesRef.current[i] = el)}
-                                    className="text-[24px] font-bold text-[#d43838] mb-4 opacity-0"
+                                    className="text-[24px] font-bold text-[#ffffff] mb-4 opacity-0"
                                 >
                                     {val.title}
                                 </h2>
                                 <p
                                     ref={(el) => (descriptionsRef.current[i] = el)}
-                                    className="text-[16px] text-[#814141] mb-6"
+                                    className="text-[16px] text-[#ffffff] mb-6"
                                 >
                                     {val.description}
                                 </p>

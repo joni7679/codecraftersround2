@@ -6,6 +6,7 @@ import Services from "../components/Services";
 import Serivespage from "../pages/Serivespage";
 import NotFound from "../pages/NotFound";
 import AboutPage from "../pages/AboutPage";
+import ContactForm from "../components/ContactForm";
 
 export const router = createBrowserRouter([
     {
@@ -14,11 +15,17 @@ export const router = createBrowserRouter([
     },
     {
         path: "/about",
-        element: <AboutPage/>,
+        element: <AboutPage />,
     },
     {
         path: "/services",
         element: <Serivespage />,
+    },
+    {
+        path: "/Contact",
+        element: <ContactForm/>,
+    },
+    {
     },
     {
         path: "*",

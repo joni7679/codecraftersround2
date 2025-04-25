@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import Card from '../components/Card';
 import CustomCursor from '../components/CustomCursor';
 import TechMarquee from '../components/TechMarquee';
+import Web from '../components/Web';
 
 
 export default function Home() {
@@ -19,8 +20,8 @@ export default function Home() {
                     <CustomCursor />
                     <Hero />
                     <AboutUs />
-                    <Stipes />
                     <Card />
+                    <Web />
                     <CreativeSection />
                     <TechMarquee />
                     <TestimonialCard />

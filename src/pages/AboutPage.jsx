@@ -1,29 +1,27 @@
+import React, { Suspense, lazy } from 'react';
+import Navbar from '../components/Navbar';
+import CustomCursor from '../components/CustomCursor';
+import Footer from '../components/Footer';
+import Loader from '../components/Loader';
+const AboutHero = lazy(() => import('../components/AboutHero'));
+const Timeline = lazy(() => import('../components/Timeline'));
+const Team = lazy(() => import('../components/Team'));
+const MasterpieceCarousel = lazy(() => import('../components/MasterpieceCarousel'));
 
-import React from 'react'
-import Timeline from '../components/Timeline'
-import AboutHero from '../components/AboutHero'
-import Navbar from '../components/Navbar'
-import CustomCursor from '../components/CustomCursor'
-import { gsap } from "gsap";
-import Team from '../components/Team'
-import Footer from '../components/Footer'
-import MasterpieceCarousel from '../components/MasterpieceCarousel'
 function AboutPage() {
   return (
-    <>
-      <main>
-        <Navbar/>
-        <CustomCursor/>
+    <main>
+      <Navbar />
+      <CustomCursor />
+      <Suspense fallback={<Loader />}>
         <AboutHero />
         <Timeline />
-        <Team/>
-        <MasterpieceCarousel/>
-        <Footer/>
-      </main>
-
-
-    </>
-  )
+        <Team />
+        <MasterpieceCarousel />
+      </Suspense>
+      <Footer />
+    </main>
+  );
 }
 
-export default AboutPage
+export default AboutPage;

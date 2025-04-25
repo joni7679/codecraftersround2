@@ -14,19 +14,12 @@ function Serivespage() {
     return (
         <main>
             <Suspense fallback={<Loader />}>
-                {/* Custom Mouse Cursor Component */}
                 <CustomCursor />
-              
-                {/* Navbar Component */}
                 <Navbar />
                 <ServicesHero />    
-                {/* Services Section */}
                 <Services />
-                {/* Pricing Plans Section */}
                 <Pricing />
-                {/* Frequently Asked Questions */}
                 <FAQ />
-                {/* Footer Section */}
                 <Footer />
             </Suspense>
         </main>

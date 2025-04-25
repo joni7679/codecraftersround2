@@ -21,18 +21,7 @@ A visually stunning **React-based website** built for the **Codecrafters Hackath
 ## 🔗 Live Preview  
 👉 [Live Demo](https://codecraftersround-2.netlify.app/)
 
----
-## 📸 Screenshots
 
-### ✅ Hero Section  
-![Hero Section](./screenshots/hero.png)
-
-### ✅ About Section  
-![About Section](./screenshots/about.png)
-
-### ✅ Services Section  
-![Services Section](./screenshots/services.png)
- 
  ---
  
 ## 🧩 Pages Overview

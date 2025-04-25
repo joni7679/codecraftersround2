@@ -4,7 +4,7 @@ import { FaExternalLinkAlt, FaStar } from 'react-icons/fa';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { GoArrowUpRight } from 'react-icons/go';
-
+import teamImg from '../assets/images/teamimg.webp'
 function Hero() {
     let heroHeading = useRef(null);
     let subHeading = useRef(null);
@@ -76,8 +76,8 @@ function Hero() {
     return (
         <>
             <Navbar />
-            <section className="font-[NeueMachina-Light] py-5 relative  bg-black text-white min-h-screen flex items-center justify-center px-6 ">
-                <div className="overly absolute bottom-0 w-full h-[80px] bg-black z-20"></div>
+            <section className="font-[NeueMachina-Light] py-5 relative min-h-screen  bg-black text-white  flex items-center justify-center px-6 ">
+                <div className="overly absolute bottom-0 w-full h-[80px] bg-[var(--secondary-color)] z-20"></div>
                 <div className="container mx-auto max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
                     <div className="space-y-6">
                         <h1
@@ -85,7 +85,7 @@ function Hero() {
                             className="text-4xl text-left md:text-5xl font-bold leading-tight "
                         >
                             We Help You Grow <br /> Your Business, <br />{" "}
-                            <span className="text-[#FFA1A1]">Creatively.</span>
+                            <span className="text-[var(--quinary-color)]">Creatively.</span>
                         </h1>
                         <p ref={subHeading} className="text-gray-300">
                             We don’t just build websites — we craft digital experiences that breathe life into your ideas.
@@ -106,12 +106,28 @@ function Hero() {
                         </div>
                     </div>
                     <div className="flex justify-center h-[500px]">
-                        <div className="hero-right-part w-[350px] h-full relative  rounded-tl-[50px] rounded-tr-[50px] overflow-hidden shadow-lg">
-                            <div ref={box} className="overly absolute w-full h-full bg-[#ffa1a1]  scale-y-0 origin-bottom transform">
-                                <img ref={heroImg} loading='lazy' className='w-[300px] absolute bottom-0 left-4' src="https://static.vecteezy.com/system/resources/thumbnails/053/238/006/small_2x/caucasian-businessman-crossed-arms-isolated-on-transparent-background-png.png" alt="" />
+                        <div className="w-[350px] h-full relative rounded-tl-[216px] rounded-tr-[216px] overflow-hidden shadow-lg">
+                            <div
+                                ref={box}
+                                className="absolute w-full h-full  bg-[var(--quinary-color)] scale-y-0 origin-bottom transform transition-all duration-500"
+                            >
+                                <div className="absolute bottom-[-4%] left-0 w-full h-full">
+                                    <div className="w-full h-full">
+                                        <img
+                                            ref={heroImg}
+                                            loading="lazy"
+                                            src={teamImg}
+                                            alt="Team"
+                                            className="w-full h-full object-cover object-center rounded-2xl shadow-2xl"
+                                        />
+                                    </div>
+                                </div>
+
                             </div>
+
                         </div>
                     </div>
+
                 </div>
             </section>
         </>
