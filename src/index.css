@@ -38,6 +38,11 @@ main {
   src: url('./assets/Fonts/Helvetica-Oblique.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'HelveticaNeueLight';
+  src: url('./assets/Fonts/HelveticaNeueLight.otf') format('truetype');
+}
+
 main {
   width: 100%;
   overflow-x: hidden;
@@ -87,6 +92,30 @@ main {
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .bg-overly {
@@ -159,6 +188,7 @@ main {
 
 
 
+
 .marquee-row {
   display: flex;
   animation: scroll-left 40s linear infinite;
@@ -197,6 +227,6 @@ main {
 
 @media (max-width: 900px) {
   nav {
-    display: none;
+    /* display: none; */
   }
 }

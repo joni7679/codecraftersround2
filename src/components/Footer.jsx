@@ -33,8 +33,9 @@ const Footer = () => {
                     <div className="space-y-4">
                         <div className="flex gap-4 flex-wrap">
                             <AgencyCard name="Contact Us"
-                                addressLine1=" West Bengal,"
-                                addressLine2=", 85130xx Indian"
+                               addressLine1 = "Gangarampur, Dakshin Dinajpur"
+                               addressLine2 = "West Bengal, India – 733124"
+                               
                                 email="info@Exampel.Com" />
                         </div>
                     </div>

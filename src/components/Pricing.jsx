@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { plans } from '../constants/PricingData';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import OverlappingButtons from './OverlappingButtons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +29,7 @@ function Pricing() {
             tl.fromTo(el,
                 { scaleY: 0, opacity: 0, transformOrigin: "bottom" },
                 { scaleY: 1, opacity: 1, duration: 0.8, ease: "power3.out" },
-              
+
             );
         });
 
@@ -79,6 +80,9 @@ function Pricing() {
                                 ))}
                             </ul>
                             <p ref={(el) => price.current[i] = el} className="text-2xl font-bold mb-4">{plan.price}</p>
+                            <div className="flex items-center justify-center gap-4">
+                            <OverlappingButtons  title="Bulid Now" />
+                            </div>
                         </div>
                     </div>
                 ))}

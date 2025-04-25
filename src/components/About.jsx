@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
-import { FaStar } from "react-icons/fa";
+import { FaAsterisk, FaStar } from "react-icons/fa";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { aboutData } from "../constants/AboutData";
@@ -19,63 +19,67 @@ const About = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: aboutsection.current,
-                    start: "top 90%",
-                    end: "bottom 20%",
+                    start: "top bottom",
+                    end: "top top",
                     scrub: 2,
                     markers: true,
                 },
                 defaults: {
                     ease: "power2.out",
                     duration: 1.2,
-                }
+                },
             });
 
-            // Animate Heading
-            tl.from(headingRef.current, {
-                y: 60,
-                opacity: 0,
-                scale: 1.4,
+            tl.fromTo(
+                headingRef.current,
+                { y: 60, opacity: 0, scale: 1.4 },
+                { y: 0, opacity: 1, scale: 1 }
+            );
+
+            tl.fromTo(
+                subheadingRef.current,
+                { y: -60, opacity: 0, scale: 1.2 },
+                { y: 0, opacity: 1, scale: 1 },
+                "+=0.8"
+            );
+
+            tl.fromTo(
+                cards.current,
+                { y: 40, opacity: 0 },
+                { y: 0, opacity: 1, stagger: 0.2 },
+                "+=0.6"
+            );
+
+            tl.fromTo(
+                description.current,
+                { y: 40, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power3.out",
+                },
+                "+=0.5"
+            );
+
+           
+            img.current.forEach((el) => {
+                gsap.fromTo(
+                    el,
+                    { scale: 1.2, opacity: 0 },
+                    {
+                        scale: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        stagger: 0.15,
+                        ease: "power3.out",
+                    }
+                );
             });
-
-            // Animate Subheading
-            tl.from(subheadingRef.current, {
-                y: -60,
-                opacity: 0,
-                scale: 1.2,
-            }, "+=0.8");
-
-            // Animate Cards
-            tl.from(cards.current, {
-                y: 40,
-                opacity: 0,
-                stagger: 0.2,
-            }, "+=0.6");
-
-            // Animate Descriptions
-            tl.from(description.current, {
-                y: 40,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: "power3.out",
-            }, "+=0.5");
-
-            // Animate Images
-            tl.from(img.current, {
-                opacity: 0,
-                scale: 0.8,
-                stagger: 0.1,
-                duration: 0.8,
-                ease: "power3.out",
-            }, "+=0.6");
-
-        }, aboutsection);
-
-        return () => ctx.revert(); // Cleanup
+        }, aboutsection); 
+        return () => ctx.revert(); 
     }, []);
-
-
-
 
 
     return (
@@ -99,10 +103,6 @@ const About = () => {
                             style={{ backgroundColor: card.bgColor }}
                         >
                             <div className="transform origin-bottom w-full h-full">
-
-
-
-
                             </div>
                             {card.icon && (
                                 <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#ff5656] rounded-full flex items-center justify-center text-white font-bold text-sm">
@@ -146,8 +146,23 @@ const About = () => {
                             )}
                         </div>
                     ))}
+                    <div className="flex items-center justify-center mt-10 md:mt-0 flex-col relative">
+                        <div className="h-[50px] w-[50px] right-[-26%] top-[1%] bg-red-300 rounded-full absolute flex items-center justify-center text-white font-bold text-sm z-10">
+                            <FaAsterisk />
+                        </div>
+                        <div className="h-[50px] w-[50px] left-[-4%] top-[56%] border-[1px] border-white rounded-full absolute flex items-center justify-center text-white font-bold text-sm z-10">
+                            <FaAsterisk />
+                        </div>
 
-                    <OverlappingButtons />
+                        <OverlappingButtons title="Our Team" />
+                        <OverlappingButtons
+                            style={{
+                                marginRight: "-80px",
+                            }}
+                            title="AWARDS"
+                        />
+                    </div>
+
                 </div>
             </div>
         </section>
